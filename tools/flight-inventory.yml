@@ -31,6 +31,27 @@
 :url: https://github.com/alces-software/inventoryware/archive/master.zip
 :version: 1.0.0
 :configure: |
+  DEPS=(gcc git)
+  if [ "$UID" == "0" ]; then
+    yum install -y -e0 "${DEPS[@]}"
+  else
+    missing=()
+    for a in "${DEPS[@]}"; do
+      if ! rpm -qa $a | grep -q "${a}"; then
+        missing+=("$a")
+      fi
+    done
+    if [ "${#missing}" -gt 0 ]; then
+      cat <<EOF
+  Please make a request to your system administrator for the
+  installation of the following packages:
+
+    ${missing[@]}
+  
+  EOF
+      exit 1
+    fi
+  fi
   flexec bundle install --path=vendor --without development test
 :command: |
   : '
