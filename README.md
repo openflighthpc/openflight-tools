@@ -10,11 +10,39 @@ platform/environment execution manager.
 
 ## Installation
 
+### Manual installation
+
 Clone the repository -- you're done!
 
 ```
 git clone https://github.com/openflighthpc/openflight-tools
 ```
+
+### From the OpenFlight `yum` repository
+
+1. Set up the `yum` repository on your system.  For production
+   releases use `openflight.repo` and for development releases use
+   `openflight-dev.repo`:
+
+   ```
+   cd /etc/yum/repos.d
+   # For production releases
+   wget https://openflighthpc.s3-eu-west-1.amazonaws.com/repos/openflight/openflight.repo
+   # For development releases
+   wget https://openflighthpc.s3-eu-west-1.amazonaws.com/repos/openflight-dev/openflight-dev.repo
+   ```
+
+2. Rebuild your `yum` cache:
+
+   ```
+   yum makecache
+   ```
+
+3. Install the `openflight-tools` RPM with `yum`:
+
+   ```
+   yum install openflight-tools
+   ```
 
 ## Operation
 
