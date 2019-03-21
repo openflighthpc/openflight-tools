@@ -25,7 +25,7 @@ git clone https://github.com/openflighthpc/openflight-tools
    `openflight-dev.repo`:
 
    ```
-   cd /etc/yum/repos.d
+   cd /etc/yum.repos.d
    # For production releases
    wget https://openflighthpc.s3-eu-west-1.amazonaws.com/repos/openflight/openflight.repo
    # For development releases
