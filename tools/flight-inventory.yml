@@ -28,7 +28,7 @@
 #===============================================================================
 ---
 :name: inventory
-:url: https://github.com/alces-software/inventoryware/archive/master.zip
+:url: https://github.com/openflighthpc/flight-inventory/archive/master.zip
 :version: 1.0.0
 :configure: |
   if ! flensure gcc git; then
