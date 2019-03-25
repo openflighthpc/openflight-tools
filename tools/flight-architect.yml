@@ -28,7 +28,7 @@
 #===============================================================================
 ---
 :name: architect
-:url: https://github.com/alces-software/underware/archive/master.zip
+:url: https://github.com/alces-software/underware/archive/0.6.0-rc4.zip
 :version: 1.0.0
 :configure: |
   flexec bundle install --path=vendor --without development test
