@@ -27,18 +27,15 @@
 # https://github.com/openflighthpc/openflight-tools
 #===============================================================================
 ---
-:name: inventory
-:url: https://github.com/openflighthpc/flight-inventory/archive/master.zip
+:name: architect
+:url: https://github.com/openflighthpc/flight-architect/archive/0.6.0-rc4.zip
 :version: 1.0.0
 :configure: |
-  if ! flensure gcc git; then
-    exit 1
-  fi
   flexec bundle install --path=vendor --without development test
 :command: |
   : '
-  : NAME: inventory
-  : SYNOPSIS: Parse and render cluster asset and inventory data
+  : NAME: architect
+  : SYNOPSIS: Manage installation and configuration of cluster content
   : VERSION: %VERSION%
   : '
   #==============================================================================
@@ -71,4 +68,4 @@
   #===============================================================================
   cd %DIR%
   export FLIGHT_PROGRAM_NAME="${flight_NAME} $(basename $0)"
-  flexec bundle exec bin/inventory "$@"
+  flexec bundle exec bin/underware "$@"
