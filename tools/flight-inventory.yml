@@ -69,6 +69,7 @@
   # For more information on OpenFlight Tools, please visit:
   # https://github.com/openflighthpc/openflight-tools
   #===============================================================================
+  export FLIGHT_CWD="$(pwd)"
   cd %DIR%
   export FLIGHT_PROGRAM_NAME="${flight_NAME} $(basename $0)"
   flexec bundle exec bin/inventory "$@"
