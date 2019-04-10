@@ -31,6 +31,9 @@
 :url: https://github.com/openflighthpc/flight-cloud/archive/master.zip
 :version: 1.0.0
 :configure: |
+  if ! flensure gcc-c++ ; then
+    exit 1
+  fi
   flexec bundle install --path=vendor --without development test
 :command: |
   : '
